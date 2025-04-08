@@ -9,7 +9,7 @@ services:
     depends_on:
       - mongo
   frontend:
-    build: ./frontend
+    build: ./frontend/axis-fe
     ports:
       - "3000:3000"
     depends_on:

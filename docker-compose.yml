@@ -5,13 +5,16 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGO_URI=mongodb://0.0.0.0:27017/fintechDB
+      - MONGO_URI=mongodb://mongo:27017/fintechDB
     depends_on:
       - mongo
   frontend:
     build: ./frontend/axis-fe
     ports:
       - "3000:3000"
+    volumes:
+      - ./frontend/axis-fe:/app
+      - /app/node_modules
     depends_on:
       - backend
   mongo:

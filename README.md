@@ -23,7 +23,7 @@ A simple fintech backend and frontend application that supports account creation
 ### Running locally
 ```bash
 git clone <repo-url>
-cd fintech-app
+cd AXIS-TASK-1
 npm install --prefix backend
 npm install --prefix frontend
 npm start --prefix backend

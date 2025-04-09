@@ -55,6 +55,7 @@ You can import `backend/swagger.json` into [Swagger Editor](https://editor.swagg
 - ✔ Opening account returns Account ID
 - ✔ Deposits/Withdrawals return Transaction ID
 - ✔ Balance returns correct value
+- PS : Backend validations such as (exceeding withdrawal limit) is logged in BE Terminal.
 
 ## 📄 Documentation
 

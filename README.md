@@ -56,4 +56,35 @@ You can import `backend/swagger.json` into [Swagger Editor](https://editor.swagg
 - ✔ Deposits/Withdrawals return Transaction ID
 - ✔ Balance returns correct value
 
+## 📄 Documentation
+
+### Design Decisions
+
+#### 1. **Tech Stack**
+- **Backend**: Node.js with Express for lightweight, scalable APIs.
+- **Database**: MongoDB (via Mongoose) to allow for dynamic schemas and fast document storage.
+- **Frontend**: React.js with Material UI (MUI) for a clean, responsive user interface.
+- **API Testing**: Jest and Supertest for automated tests.
+- **Swagger**: Used for API documentation for better visibility and developer experience.
+- **Docker**: Enables consistent development and deployment environments.
+
+#### 2. **Structure & Modularity**
+- Separated the backend into `controllers`, `services`, `routes`, and `models` to maintain separation of concerns and improve maintainability.
+- The frontend uses a simple component structure (`AccountForm`, `TransactionForm`, `Balance`) to keep the UI easy to extend and manage.
+
+#### 3. **RESTful API**
+- Clean and descriptive RESTful routes (e.g., `POST /accounts`, `GET /accounts/:id/balance`).
+- Separate endpoints for deposit and withdraw operations, clearly indicating intent.
+
+### Challenges Encountered
+
+#### 1. **Handling Transactions Safely**
+- Since MongoDB does not support true ACID transactions at the document level (unless using replica sets), extra care was taken in validating input and confirming state updates atomically in code.
+
+#### 2. **User Interface Consistency**
+- Styling components with MUI required additional setup for responsiveness and spacing. We chose MUI for rapid prototyping and scalability of components.
+
+#### 3. **Cross-Origin Requests**
+- CORS setup was needed to ensure the React frontend could communicate with the backend during development.
+
 ---
